@@ -13,10 +13,12 @@
 
 1. GitHub에 저장소를 만듭니다. 사용자 사이트 주소를 원하면 실제 GitHub 사용자명을 사용한 `<사용자명>.github.io`로 이름을 지정합니다. `jun`이라는 표시 이름과 GitHub 계정명은 별개입니다.
 2. 이 폴더의 `index.html`, `style.css`, `.nojekyll`을 저장소의 루트에 올립니다.
-3. 저장소 **Settings → Pages → Build and deployment**에서 **Deploy from a branch**를 선택합니다.
-4. **main** 브랜치와 **/(root)** 폴더를 선택하고 **Save**를 누릅니다. 다른 브랜치를 사용했다면 해당 브랜치를 선택합니다.
+3. 저장소 **Settings → Pages → Build and deployment → Source**에서 **GitHub Actions**를 선택합니다.
+4. `.github/workflows/deploy.yml`이 `main`에 push되면 자동으로 배포합니다. **Actions → Deploy to GitHub Pages → Run workflow**에서 수동 실행도 가능합니다.
 5. Pages 설정에 표시되는 공개 주소를 확인합니다. 일반 저장소는 `https://<사용자명>.github.io/<저장소명>/`으로 열립니다.
 
 모든 로컬 경로를 상대 경로로 작성하여 사용자 사이트와 저장소 하위 경로 모두 지원합니다.
+
+배포 워크플로는 `index.html`, `style.css`, `.nojekyll`만 공개합니다. 이미지 등 새 파일을 추가한다면 워크플로의 복사 목록에도 추가하세요.
 
 공식 안내: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
